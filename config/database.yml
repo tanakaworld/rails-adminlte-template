@@ -1,0 +1,32 @@
+# MySQL.  Versions 5.0+ are recommended.
+#
+# Install the MYSQL driver
+#   gem install mysql2
+#
+# Ensure the MySQL gem is defined in your Gemfile
+#   gem 'mysql2'
+#
+# And be sure to use new-style password hashing:
+#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
+#
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: 7DN3vz4D
+  host: localhost
+
+development:
+  <<: *default
+  database: rails-adminlte-template_development
+
+test:
+  <<: *default
+  database: rails-adminlte-template_test
+
+production:
+  <<: *default
+  database: rails-adminlte-template_production
+  username: rails-adminlte-template
+  password: <%= ENV['RAILS-ADMINLTE-TEMPLATE_DATABASE_PASSWORD'] %>
