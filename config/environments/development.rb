@@ -38,4 +38,24 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.sass.preferred_syntax = :sass
+  config.sass.syntax = :sass
+
+  # Rails generators
+  config.generators do |g|
+    g.stylesheets false
+    g.javascripts false
+    g.helper false
+    g.jbuilder false
+    g.template_engine :slim
+    g.stylesheet_engine = :sass
+    g.test_framework :rspec,
+                     fixture: true,
+                     fixture_replacement: :factory_girl,
+                     view_specs: false,
+                     routing_specs: false,
+                     helper_specs: false,
+                     integration_tool: false
+    g.fixture_replacement :factory_girl, dir: "spec/factories"
+  end
 end
