@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'slim-rails'
 gem 'font-awesome-sass', '~> 4.5.0'
 gem 'ransack'
+gem 'bower-rails'
 
 # Server
 gem 'execjs', '2.6.0'
